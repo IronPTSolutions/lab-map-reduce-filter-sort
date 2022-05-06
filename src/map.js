@@ -7,7 +7,10 @@
  * @returns [1, 2, 3, -1]
  */
 function parseNumbers(numbersAsString) {
-  
+  return numbersAsString.map((value) => {
+    const number = parseInt(value);
+    return Number.isNaN(number) ? -1 : number
+  });
 }
 
 /**
@@ -16,7 +19,7 @@ function parseNumbers(numbersAsString) {
  * @returns [0, 3, 2, 5]
  */
 function sumEvenSubOdd(numbers) {
-  
+  return numbers.map(number => number % 2 === 0 ? ++number : --number)
 }
 
 /**
@@ -80,7 +83,14 @@ function sumEvenSubOdd(numbers) {
     ]
  */
 function buildStudentsAvg(students) {
-  
+  return students.map(student => {
+    student = JSON.parse(JSON.stringify(student))
+    student.avg = 0;
+    for (let mark of student.marks) {
+      student.avg = student.avg + (mark.grade / student.marks.length)
+    }
+    return student;
+  })
 }
 
 

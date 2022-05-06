@@ -5,7 +5,7 @@
  * @returns [2, 4]
  */
 function sum(numbers) {
-  
+  return numbers.reduce((acc, n) => acc + n, 0)
 }
 
 
@@ -19,7 +19,7 @@ function sum(numbers) {
  * @returns [{ name: 'Juanito', grade: 9 }]
  */
 function bestStudent(students) {
-  
+  return students.reduce((best, student) => !best || student.grade > best.grade ? student : best, undefined)
 }
 
 
@@ -38,7 +38,13 @@ function bestStudent(students) {
   }
  */
 function countWords(words) {
-  
+  return words.reduce((dict, word) => {
+    if (!dict[word]) {
+      dict[word] = 0;
+    }
+    dict[word]++
+    return dict;
+  }, {})
 } 
 
 

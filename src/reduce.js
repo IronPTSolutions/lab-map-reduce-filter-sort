@@ -58,7 +58,7 @@ function countWords(words) {
  * // 6
  */
 function getTotalPrice(products) {
-
+   return products.reduce((total, product) => total + product.price, 0)
 }
 
 /**
@@ -72,7 +72,11 @@ function getTotalPrice(products) {
  * // { Fruit: 2, Vegetable: 1 }
  */
 function countByCategory(products) {
-   
+   return products.reduce((categories, product) => {
+      const category = product.category;
+      categories[category] = !categories[category] ? 1 : categories[category] + 1;
+      return categories;
+   }, {})
 }
 
 /**
@@ -86,7 +90,10 @@ function countByCategory(products) {
  * // "Anna, Carlos, Bea"
  */
 function joinNames(users) {
-
+   return users.reduce(
+      (names, user) => names === '' ? user.name : `${names}, ${user.name}`,
+      ''
+   );
 }
 
 module.exports = {

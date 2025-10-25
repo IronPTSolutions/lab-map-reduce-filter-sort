@@ -36,7 +36,7 @@ function clean(elements) {
     }
  * ] users
  * @param "JS" skill
- * @returns [1, 2, false, "a"]
+ * @returns filtered users by skill
  */
 function filterBySkill(users, skill) {
   

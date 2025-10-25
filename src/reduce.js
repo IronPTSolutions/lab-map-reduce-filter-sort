@@ -2,7 +2,7 @@
 /**
  * Suma todos los números de un array
  * @param [1, 2, 3, 4] numbers
- * @returns [2, 4]
+ * @returns 10
  */
 function sum(numbers) {
   
@@ -27,8 +27,7 @@ function bestStudent(students) {
  * Dado un array de palabras, devuelve un diccionario con el número de apariciones.
  * @param [
     "dog", "cat", "dog", "cat", "fish", "man", "woman", "woman"
- * ] users
- * @param "JS" skill
+ * ]
  * @returns {
     dog: 2,
     cat: 2,
